@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Scrollorama</title>
+<link rel="stylesheet" href="estilos.css"/>
+<script src="jquery.min.js"></script>
+
+</head>
+
+<body>
+<section class="wrapp">
+  <section class="contenedor">
+      <section class="nubes">
+        
+        <div class="nube1"></div>
+        <div class="nube2"></div>
+        <div class="nube3"></div>
+        <div class="nube4"></div>
+
+      </section>
+
+      <section class="donut">
+         <article id="yo">
+            <img src="donut.png" alt="donut_lili" height="200" width="211"/>
+  
+          </article>
+      </section>
+  </section>
+</section>
+
+<script src="js/jquery.scrollorama.js"></script>
+<script src="prefixfree.js"></script>
+
+<script>
+
+$(document).on("ready", gogo);
+function gogo(){
+      var scrollorama = $.scrollorama({ blocks:'.donut' }); 
+
+      scrollorama.animate('#yo',{ duration: 1500, property:'top', start:-20, end:2300});
+      scrollorama.animate('#yo',{ duration: 100, property:'opacity', start:.1, end:1});
+}
+
+$(document).on("ready", go);
+function go(){
+      var scrollorama = $.scrollorama({ blocks:'.nubes' }); 
+
+      scrollorama.animate('.nube1',{ duration: 1500, property:'left', start:-70, end:2300});
+      scrollorama.animate('.nube1',{ duration: 1500, property:'top', start:50});
+      scrollorama.animate('.nube2',{ duration: 500, property:'left', start:150, end:-20});
+      scrollorama.animate('.nube2',{ duration: 1500, property:'top', start:200});
+      scrollorama.animate('.nube3',{ delay: 20,duration: 500, property:'left', start:-150, end:200});
+      scrollorama.animate('.nube3',{ property:'top', start:350});
+      scrollorama.animate('.nube4',{ delay: 40, duration: 500, property:'left', start:250, end:-50});
+      scrollorama.animate('.nube4',{ property:'top', start:500});
+}
+
+</script>
+</body>
+</html>
